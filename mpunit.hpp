@@ -38,7 +38,7 @@
 
 #if ((defined(UNICODE) || defined(_UNICODE)) && defined(_WIN32))
 #define MPWUNICODE
-#define MPU_MAIN wmain
+#define mpu_main wmain
 #include <wchar.h>
 #include <io.h>
 #include <fcntl.h>
@@ -52,7 +52,7 @@ typedef wchar_t mpuchar;
 static std::wostream& mpucout(std::wcout);
 #define mpu_isprint(c) iswprint(c)
 #else
-#define MPU_MAIN main
+#define mpu_main main
 #define U(str) str
 typedef std::string mpustring;
 typedef std::ostringstream mpustringstream;

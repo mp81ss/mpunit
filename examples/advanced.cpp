@@ -65,8 +65,8 @@ static void addTest(MpUnit& mpu)
     mpu.AddTest(test);
 }
 
-// Add cli support to unicode application and pass options to Mpunit
-int MPU_MAIN(int argc, mpuchar* argv[])
+// Add cli support to unicode application and pass options to Mpunit object
+int mpu_main(int argc, mpuchar* argv[])
 {
     MpUnit mpu(U("Battery example in georgian: ბატარეის მაგალითი"));
 
