@@ -1225,9 +1225,7 @@ public:
     MpuOutput* _mpuOut;
     MpuStatus _mpuStatus;
 
-    template <typename T> T GetArgument() {
-        return static_cast<T>(argument);
-    }
+    template <typename T> T GetArgument() { return static_cast<T>(argument); }
     template <typename T> void SetArgument(T arg) {
         argument = const_cast<void*>(static_cast<const void*>(arg));
     }
@@ -1255,6 +1253,10 @@ public:
     MpuTest(const MpuTest& o) : MpuObject(static_cast<MpuObject>(o)), 
         _mpuSn(o._mpuSn), _mpuSa(o._mpuSa), _mpuLvl(o._mpuLvl)
     {}
+
+    template <typename T> T GetSuiteArgument() {
+        return static_cast<T>(_mpuSa);
+    }
 
 protected:
 
